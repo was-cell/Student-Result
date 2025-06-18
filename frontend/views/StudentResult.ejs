@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Result</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen p-2 bg-orange-50">
+
+  <div class="w-full max-w-lg p-4 bg-white border border-black shadow-sm rounded-xl">
+    <h1 class="text-lg font-bold text-center text-orange-600">XYZ High School</h1>
+    <h2 class="mb-3 text-lg font-semibold text-center text-orange-500">Class 10th Examination Result</h2>
+
+    <!-- Student Info -->
+    <div class="space-y-1 text-sm leading-5 text-gray-700">
+      <p><strong>Name:</strong> <%= name %></p>
+      <p><strong>Roll No:</strong> <%= roll_num %></p>
+      <p><strong>DOB:</strong> <%= dob %></p>
+      <p><strong>Father's Name:</strong> <%= father_name %></p>
+    </div>
+
+    <!-- Result Table -->
+    <table class="w-full mt-3 text-xs text-center border border-gray-300">
+      <thead class="text-gray-800 bg-orange-200">
+        <tr>
+          <th class="px-2 py-1 border">Subject</th>
+          <th class="px-2 py-1 border">Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="px-2 py-1 border">Math</td>
+          <td class="px-2 py-1 border"><%= student.marks_1 %></td>
+        </tr>
+        <tr>
+          <td class="px-2 py-1 border">Science</td>
+          <td class="px-2 py-1 border"><%= student.marks_2 %></td>
+        </tr>
+        <tr>
+          <td class="px-2 py-1 border">English</td>
+          <td class="px-2 py-1 border"><%= student.marks_3 %></td>
+        </tr>
+        <tr>
+          <td class="px-2 py-1 border">Social Studies</td>
+          <td class="px-2 py-1 border"><%= student.marks_4 %></td>
+        </tr>
+        <tr>
+          <td class="px-2 py-1 border">Hindi</td>
+          <td class="px-2 py-1 border"><%= student.marks_5 %></td>
+        </tr>
+
+        <tr class="font-medium bg-orange-100">
+          <td class="px-2 py-1 border">Total</td>
+          <td class="px-2 py-1 border"><%= total_marks %></td>
+        </tr>
+        <tr class="font-medium bg-orange-100">
+          <td class="px-2 py-1 border">Percentage</td>
+          <td class="px-2 py-1 border"><%= percentage %>%</td>
+        </tr>
+        <tr class="font-bold <%= result === 'Pass' ? 'text-green-600 bg-green-100' : 'text-red-600 bg-red-100' %>">
+          <td colspan="2" class="px-2 py-1 border"><%= result %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
