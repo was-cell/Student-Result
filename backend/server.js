@@ -11,7 +11,7 @@ const PORT = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-// ✅ यह 2 लाइनें बहुत ज़रूरी हैं — सही जगह और सही path में लिखो
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../frontend/views'));
 
